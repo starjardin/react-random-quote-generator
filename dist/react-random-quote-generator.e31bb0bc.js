@@ -33872,11 +33872,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 const AUTHOR_URL = 'https://quote-garden.herokuapp.com/api/v2/authors/buddha?';
 const maxPages = "page=1&limit=10";
 
-function QuotesGeneratedByAuthor({
-  author,
-  setQuotes,
-  quotes
-}) {
+function QuotesGeneratedByAuthor() {
   const authorName = (0, _reactRouterDom.useParams)();
 
   async function generateQoutesByAthor() {
@@ -33885,7 +33881,7 @@ function QuotesGeneratedByAuthor({
     console.log(data);
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, author);
+  return /*#__PURE__*/_react.default.createElement("div", null, "Hello world");
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"QuotesGenerator.js":[function(require,module,exports) {
 "use strict";
@@ -33955,7 +33951,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function App() {
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/author/:name"
+    path: "/authors/:authorName"
   }, /*#__PURE__*/_react.default.createElement(_QuotesGeneratedByAuthor.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_QuotesGenerator.default, null))));
@@ -34000,7 +33996,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61613" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64107" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

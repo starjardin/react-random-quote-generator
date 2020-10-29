@@ -5,7 +5,7 @@ const AUTHOR_URL = 'https://quote-garden.herokuapp.com/api/v2/authors/buddha?'
 
 const maxPages = "page=1&limit=10"
 
-export default function QuotesGeneratedByAuthor ({ author, setQuotes, quotes }) {
+export default function QuotesGeneratedByAuthor () {
   const authorName = useParams()
   async function generateQoutesByAthor () {
     const res = await fetch('https://quote-garden.herokuapp.com/api/v2/authors/neal?page=1&limit=10')
@@ -13,6 +13,6 @@ export default function QuotesGeneratedByAuthor ({ author, setQuotes, quotes }) 
     console.log(data);
   }
    return (
-     <div>{author}</div>
+     <div>Hello world</div>
    )
 }

@@ -12,7 +12,7 @@ export default function App () {
   return (
     <Router>
       <Switch>
-        <Route path="/author/:name">
+        <Route path="/authors/:authorName">
           <QuotesGeneratedByAuthor />
         </Route>
         <Route path="/">
