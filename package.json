@@ -1,7 +1,7 @@
 {
   "name": "react-random-quote-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Challenge: Create a quote generator app, and use React to handle the frontend. Don’t look at the existing solution. Fulfill user stories below:",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,18 +10,27 @@
   "license": "ISC",
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   },
   "browserslist": {
-		"production": [
-		  ">0.2%",
-		  "not dead",
-		  "not op_mini all"
-		],
-		"development": [
-		  "last 1 chrome version",
-		  "last 1 firefox version",
-		  "last 1 safari version"
-		]
-	  }
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starjardin/react-random-quote-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/starjardin/react-random-quote-generator/issues"
+  },
+  "homepage": "https://github.com/starjardin/react-random-quote-generator#readme"
 }
