@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/starjardin/react-random-quote-generator/issues"
   },
-  "homepage": "https://github.com/starjardin/react-random-quote-generator#readme"
+  "homepage": "https://github.com/starjardin/react-random-quote-generator#readme",
+  "devDependencies": {
+    "sass": "^1.28.0"
+  }
 }

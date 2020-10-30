@@ -33853,37 +33853,7 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"QuotesGeneratedByAuthor.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = QuotesGeneratedByAuthor;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _reactRouterDom = require("react-router-dom");
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-const AUTHOR_URL = 'https://quote-garden.herokuapp.com/api/v2/authors/buddha?';
-const maxPages = "page=1&limit=10";
-
-function QuotesGeneratedByAuthor() {
-  const authorName = (0, _reactRouterDom.useParams)();
-
-  async function generateQoutesByAthor() {
-    const res = await fetch('https://quote-garden.herokuapp.com/api/v2/authors/neal?page=1&limit=10');
-    const data = await res.json();
-    console.log(data);
-  }
-
-  return /*#__PURE__*/_react.default.createElement("div", null, "Hello world");
-}
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"QuotesGenerator.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"QuotesGenerator.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33894,10 +33864,6 @@ exports.default = QuotesGenerator;
 var _react = _interopRequireWildcard(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
-
-var _QuotesGeneratedByAuthor = _interopRequireDefault(require("./QuotesGeneratedByAuthor"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -33923,15 +33889,63 @@ function QuotesGenerator() {
   }
 
   if (!quotes.quote) return null;
-  console.log(quotes.quote);
-  console.log(quotes.quote.quoteAuthor);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
     onClick: generateQoutes
-  }, "random"), /*#__PURE__*/_react.default.createElement("h2", null, quotes.quote ? quotes.quote.quoteText : "Loading..."), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "random"), /*#__PURE__*/_react.default.createElement("h2", null, quotes.quote.quoteText), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: `/authors/${quotes.quote.quoteAuthor}`
-  }, /*#__PURE__*/_react.default.createElement("button", null, quotes.quote.quoteAuthor)));
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn--author"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "author--name"
+  }, quotes.quote.quoteAuthor), /*#__PURE__*/_react.default.createElement("span", {
+    className: "quote--genre"
+  }, quotes.quote.quoteGenre))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./QuotesGeneratedByAuthor":"QuotesGeneratedByAuthor.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"QuotesGeneratedByAuthor.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = QuotesGeneratedByAuthor;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+const AUTHOR_URL = 'https://quote-garden.herokuapp.com/api/v2/authors/';
+const maxPages = "?page=1&limit=10";
+
+function QuotesGeneratedByAuthor() {
+  const {
+    authorName
+  } = (0, _reactRouterDom.useParams)();
+  const [quotesByAuthor, setQuotesByAuthor] = (0, _react.useState)([]);
+
+  async function generateQoutesByAthor() {
+    const res = await fetch(AUTHOR_URL + authorName + maxPages);
+    const data = await res.json();
+    setQuotesByAuthor(data);
+  }
+
+  (0, _react.useEffect)(() => {
+    generateQoutesByAthor();
+  }, []);
+  if (!quotesByAuthor.quotes) return null;
+  console.log(authorName);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, "back"), /*#__PURE__*/_react.default.createElement("h2", {
+    className: "author"
+  }, authorName), /*#__PURE__*/_react.default.createElement("ul", null, quotesByAuthor.quotes.map(quote => /*#__PURE__*/_react.default.createElement("li", {
+    key: quote._id
+  }, quote.quoteText))));
+}
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33996,7 +34010,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64107" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49431" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

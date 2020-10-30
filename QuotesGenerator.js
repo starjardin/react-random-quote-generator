@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import QuotesGeneratedByAuthor from './QuotesGeneratedByAuthor'
 
 const API_URL = 'https://quote-garden.herokuapp.com/api/v2/quotes/random'
 
@@ -22,14 +21,18 @@ export default function QuotesGenerator () {
   }
 
   if (!quotes.quote) return null
-  console.log(quotes.quote);
-  console.log(quotes.quote.quoteAuthor);
+  
   return (
     <>
       <button onClick={generateQoutes}>random</button>
-      <h2>{quotes.quote ? quotes.quote.quoteText : "Loading..."}</h2>
+      <h2>{quotes.quote.quoteText}</h2>
       <Link to={`/authors/${quotes.quote.quoteAuthor}`}>
-        <button>{quotes.quote.quoteAuthor}</button>
+        <button
+          className="btn--author"
+        >
+          <span className="author--name">{quotes.quote.quoteAuthor}</span>
+          <span className="quote--genre">{quotes.quote.quoteGenre}</span>
+        </button>
       </Link>
     </>
   )

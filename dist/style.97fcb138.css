@@ -1,0 +1,36 @@
+body {
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  margin-block: 2rem;
+  padding-left: 2rem;
+  border-left: 8px solid #F7DF94;
+}
+
+.author {
+  text-align: center;
+}
+
+.btn--author {
+  background-color: #333333;
+  padding-block: 1rem;
+  padding-inline: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+}
+.btn--author span {
+  display: block;
+  text-align: start;
+}
+.btn--author .author--name {
+  color: #f2f2f2;
+}
+.btn--author .quote--genre {
+  color: #828282;
+}
+
+/*# sourceMappingURL=/style.97fcb138.css.map */
