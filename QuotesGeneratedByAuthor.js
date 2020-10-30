@@ -19,18 +19,26 @@ export default function QuotesGeneratedByAuthor () {
     generateQoutesByAthor()
   }, [])
 
-  if (!quotesByAuthor.quotes) return null
-  console.log(authorName);
+  function handleClick () {
+    console.log("Hello world");
+  }
+
+  // if (!quotesByAuthor.quotes) return null
 
    return (
      <>
       <Link to="/">
-        back
+        <button className="refresh">random</button>
       </Link>
-      <h2 className="author">{authorName}</h2>
-        <ul>
-          {quotesByAuthor.quotes.map(quote => <li key={quote._id}>{quote.quoteText}</li>)}
-        </ul>
+      {!quotesByAuthor.quotes 
+        ? <h4 className="athour">Loading....</h4>
+        : <div className="random">
+            <h2 className="author">{authorName}</h2>
+            <blockquote>
+              {quotesByAuthor.quotes.map(quote => <q key={quote._id}>{quote.quoteText}</q>)}
+            </blockquote>
+          </div>
+      }
      </>
    )
 }

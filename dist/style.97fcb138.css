@@ -1,14 +1,16 @@
 body {
   max-width: 920px;
   margin-inline: auto;
+  background-color: #ffffff;
 }
 
-li {
+q {
   list-style: none;
   margin: 0;
   margin-block: 2rem;
   padding-left: 2rem;
   border-left: 8px solid #F7DF94;
+  display: block;
 }
 
 .author {
@@ -20,7 +22,11 @@ li {
   padding-block: 1rem;
   padding-inline: 0.5rem;
   width: 100%;
+  max-width: 672px;
   cursor: pointer;
+  margin: auto;
+  display: block;
+  border: none;
 }
 .btn--author span {
   display: block;
@@ -31,6 +37,38 @@ li {
 }
 .btn--author .quote--genre {
   color: #828282;
+  text-transform: capitalize;
+  padding-top: 0.2rem;
+}
+
+.random-quote {
+  border-left: 8px solid #F7DF94;
+  padding-left: 4rem;
+  max-width: 614px;
+  margin-inline: auto;
+  margin-top: 6rem;
+}
+
+.refresh {
+  background-image: url("/refresh.35079f67.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  padding-right: 2rem;
+  background-color: #ffffff;
+  border: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.refresh:focus {
+  border: 1px #cccccc solid;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */

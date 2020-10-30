@@ -33888,10 +33888,14 @@ function QuotesGenerator() {
     fetchQuotes();
   }
 
-  if (!quotes.quote) return null;
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, !quotes.quote ? /*#__PURE__*/_react.default.createElement("h2", null, "Loading ....") : /*#__PURE__*/_react.default.createElement("div", {
+    className: "quote-container"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "refresh",
     onClick: generateQoutes
-  }, "random"), /*#__PURE__*/_react.default.createElement("h2", null, quotes.quote.quoteText), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "random"), /*#__PURE__*/_react.default.createElement("h4", {
+    className: "random-quote"
+  }, quotes.quote.quoteText), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: `/authors/${quotes.quote.quoteAuthor}`
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "btn--author"
@@ -33899,7 +33903,7 @@ function QuotesGenerator() {
     className: "author--name"
   }, quotes.quote.quoteAuthor), /*#__PURE__*/_react.default.createElement("span", {
     className: "quote--genre"
-  }, quotes.quote.quoteGenre))));
+  }, quotes.quote.quoteGenre)))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"QuotesGeneratedByAuthor.js":[function(require,module,exports) {
 "use strict";
@@ -33935,15 +33939,25 @@ function QuotesGeneratedByAuthor() {
   (0, _react.useEffect)(() => {
     generateQoutesByAthor();
   }, []);
-  if (!quotesByAuthor.quotes) return null;
-  console.log(authorName);
+
+  function handleClick() {
+    console.log("Hello world");
+  } // if (!quotesByAuthor.quotes) return null
+
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, "back"), /*#__PURE__*/_react.default.createElement("h2", {
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "refresh"
+  }, "random")), !quotesByAuthor.quotes ? /*#__PURE__*/_react.default.createElement("h4", {
+    className: "athour"
+  }, "Loading....") : /*#__PURE__*/_react.default.createElement("div", {
+    className: "random"
+  }, /*#__PURE__*/_react.default.createElement("h2", {
     className: "author"
-  }, authorName), /*#__PURE__*/_react.default.createElement("ul", null, quotesByAuthor.quotes.map(quote => /*#__PURE__*/_react.default.createElement("li", {
+  }, authorName), /*#__PURE__*/_react.default.createElement("blockquote", null, quotesByAuthor.quotes.map(quote => /*#__PURE__*/_react.default.createElement("q", {
     key: quote._id
-  }, quote.quoteText))));
+  }, quote.quoteText)))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"App.js":[function(require,module,exports) {
 "use strict";
