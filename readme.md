@@ -30,11 +30,11 @@ Template for your readme :
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://startjardin-quote-generator.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/starjardin/react-random-quote-generator">
       Solution
     </a>
   </h3>
@@ -59,10 +59,11 @@ Template for your readme :
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
--   Where can I see your demo?
+-  <a href="https://startjardin-quote-generator.netlify.app/">
+      You can see my demo here
+    </a>
 -   What was your experience?
--   What have you learned/improved?
--   Your wisdom? :)
+-   What I have learned was using `useParams()` and `Link,` `Router` and `Route` and `Switch` are now more clearer
 
 ### Built With
 
