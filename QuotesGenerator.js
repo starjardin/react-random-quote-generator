@@ -39,6 +39,9 @@ export default function QuotesGenerator () {
               <span className="quote--genre">{quotes.quote.quoteGenre}</span>
             </button>
           </Link>
+          <Link to={`/genres/${quotes.quote.quoteGenre}`}>
+            <button>{quotes.quote.quoteGenre}</button>
+          </Link>
         </div>
       }
     </>

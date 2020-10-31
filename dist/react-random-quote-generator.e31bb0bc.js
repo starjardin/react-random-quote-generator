@@ -33903,7 +33903,9 @@ function QuotesGenerator() {
     className: "author--name"
   }, quotes.quote.quoteAuthor), /*#__PURE__*/_react.default.createElement("span", {
     className: "quote--genre"
-  }, quotes.quote.quoteGenre)))));
+  }, quotes.quote.quoteGenre))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: `/genres/${quotes.quote.quoteGenre}`
+  }, /*#__PURE__*/_react.default.createElement("button", null, quotes.quote.quoteGenre))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"QuotesGeneratedByAuthor.js":[function(require,module,exports) {
 "use strict";
@@ -33959,6 +33961,47 @@ function QuotesGeneratedByAuthor() {
     key: quote._id
   }, quote.quoteText)))));
 }
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"QuotesByGenre.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = QuotesByAuthor;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+const API_GENRE = "https://quote-garden.herokuapp.com/api/v2/genres/";
+const MAX_PAGE = "?page=1&limit=10";
+
+function QuotesByAuthor() {
+  const {
+    genreName
+  } = (0, _reactRouterDom.useParams)();
+  const [quotesByGenres, setQuotesByGenres] = (0, _react.useState)([]);
+
+  const getQuotesByGenres = async () => {
+    const res = await fetch(`${API_GENRE}${genreName}${MAX_PAGE}`);
+    const data = await res.json();
+    setQuotesByGenres(data.quotes);
+  };
+
+  (0, _react.useEffect)(() => {
+    getQuotesByGenres();
+  }, []);
+  console.log(quotesByGenres);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, !quotesByGenres ? /*#__PURE__*/_react.default.createElement("h2", null, "Loading....") : /*#__PURE__*/_react.default.createElement("blockquote", null, quotesByGenres.map(quote => {
+    return /*#__PURE__*/_react.default.createElement("q", {
+      key: quote._id
+    }, quote.quoteText);
+  })));
+}
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
@@ -33973,6 +34016,8 @@ var _QuotesGenerator = _interopRequireDefault(require("./QuotesGenerator"));
 
 var _QuotesGeneratedByAuthor = _interopRequireDefault(require("./QuotesGeneratedByAuthor"));
 
+var _QuotesByGenre = _interopRequireDefault(require("./QuotesByGenre"));
+
 var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -33981,10 +34026,12 @@ function App() {
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/authors/:authorName"
   }, /*#__PURE__*/_react.default.createElement(_QuotesGeneratedByAuthor.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/genres/:genreName"
+  }, /*#__PURE__*/_react.default.createElement(_QuotesByGenre.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_QuotesGenerator.default, null))));
 }
-},{"react":"node_modules/react/index.js","./QuotesGenerator":"QuotesGenerator.js","./QuotesGeneratedByAuthor":"QuotesGeneratedByAuthor.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./QuotesGenerator":"QuotesGenerator.js","./QuotesGeneratedByAuthor":"QuotesGeneratedByAuthor.js","./QuotesByGenre":"QuotesByGenre.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -34024,7 +34071,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49431" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50506" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
