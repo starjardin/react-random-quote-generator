@@ -15,6 +15,7 @@ q {
 
 .author {
   text-align: center;
+  text-transform: capitalize;
 }
 
 .btn--author {
@@ -27,6 +28,14 @@ q {
   margin: auto;
   display: block;
   border: none;
+  margin-block: 1rem;
+  background-image: url("/arrow.ade7741f.svg");
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-position: 140% 50%;
+  box-shadow: 1px 1px 5px #dedeed;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 .btn--author span {
   display: block;
@@ -39,6 +48,16 @@ q {
   color: #828282;
   text-transform: capitalize;
   padding-top: 0.2rem;
+}
+
+.btn--author:hover,
+.btn--author:focus {
+  transform: scale(1.05);
+}
+
+.genre {
+  text-transform: capitalize;
+  color: #f2f2f2;
 }
 
 .random-quote {

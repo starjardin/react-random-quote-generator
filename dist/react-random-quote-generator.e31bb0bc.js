@@ -33903,9 +33903,11 @@ function QuotesGenerator() {
     className: "author--name"
   }, quotes.quote.quoteAuthor), /*#__PURE__*/_react.default.createElement("span", {
     className: "quote--genre"
-  }, quotes.quote.quoteGenre))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, quotes.quote.quoteGenre))), quotes.quote.quoteGenre && /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: `/genres/${quotes.quote.quoteGenre}`
-  }, /*#__PURE__*/_react.default.createElement("button", null, quotes.quote.quoteGenre))));
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn--author genre"
+  }, quotes.quote.quoteGenre))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"QuotesGeneratedByAuthor.js":[function(require,module,exports) {
 "use strict";
@@ -33941,12 +33943,6 @@ function QuotesGeneratedByAuthor() {
   (0, _react.useEffect)(() => {
     generateQoutesByAthor();
   }, []);
-
-  function handleClick() {
-    console.log("Hello world");
-  } // if (!quotesByAuthor.quotes) return null
-
-
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement("button", {
@@ -33995,12 +33991,17 @@ function QuotesByAuthor() {
   (0, _react.useEffect)(() => {
     getQuotesByGenres();
   }, []);
-  console.log(quotesByGenres);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, !quotesByGenres ? /*#__PURE__*/_react.default.createElement("h2", null, "Loading....") : /*#__PURE__*/_react.default.createElement("blockquote", null, quotesByGenres.map(quote => {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "refresh"
+  }, "random")), !quotesByGenres ? /*#__PURE__*/_react.default.createElement("h2", null, "Loading....") : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", {
+    className: "author"
+  }, genreName), /*#__PURE__*/_react.default.createElement("blockquote", null, quotesByGenres.map(quote => {
     return /*#__PURE__*/_react.default.createElement("q", {
       key: quote._id
     }, quote.quoteText);
-  })));
+  }))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"App.js":[function(require,module,exports) {
 "use strict";

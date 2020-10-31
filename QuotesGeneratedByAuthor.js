@@ -19,12 +19,6 @@ export default function QuotesGeneratedByAuthor () {
     generateQoutesByAthor()
   }, [])
 
-  function handleClick () {
-    console.log("Hello world");
-  }
-
-  // if (!quotesByAuthor.quotes) return null
-
    return (
      <>
       <Link to="/">

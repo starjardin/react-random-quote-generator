@@ -15,6 +15,7 @@ q {
 
 .author {
   text-align: center;
+  text-transform: capitalize;
 }
 
 .btn--author {
@@ -27,6 +28,14 @@ q {
   margin: auto;
   display: block;
   border: none;
+  margin-block: 1rem;
+  background-image: url("./assets/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-position: 140% 50%;
+  box-shadow: 1px 1px 5px #dedeed;
+  border-radius: 5px;
+  transition: 0.3s;
   span {
     display: block;
     text-align: start;
@@ -41,6 +50,16 @@ q {
     text-transform: capitalize;
     padding-top: .2rem;
   }
+}
+
+.btn--author:hover,
+.btn--author:focus {
+  transform: scale(1.05);
+}
+
+.genre {
+  text-transform: capitalize;
+  color: #f2f2f2;
 }
 
 .random-quote {
@@ -72,12 +91,3 @@ q {
 a {
   text-decoration: none;
 }
-
-// @media (min-width : 620px) {
-//   .btn--author {
-//     margin-inline: auto;
-//     margin-left: 10%;
-//     display: block;
-//   }
-// }
-
